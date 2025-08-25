@@ -56,12 +56,6 @@ class AppTheme {
       ),
     ),
     scaffoldBackgroundColor: const Color(0xFFF5F7FA),
-    cardTheme: const CardThemeData(
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(24)),
-      ),
-    ),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -118,11 +112,5 @@ class AppTheme {
       ),
     ),
     scaffoldBackgroundColor: const Color(0xFF050810),
-    cardTheme: const CardThemeData(
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(24)),
-      ),
-    ),
   );
 }

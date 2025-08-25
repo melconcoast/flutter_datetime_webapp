@@ -128,8 +128,8 @@ class _ClockWidgetState extends ConsumerState<ClockWidget> {
               spreadRadius: _isHovered ? 2 : 0,
             ),
             BoxShadow(
-              color: Colors.white.withValues(
-                alpha: widget.isDaytime ? 0.6 : 0.1,
+              color: Colors.white.withOpacity(
+                widget.isDaytime ? 0.6 : 0.1,
               ),
               blurRadius: 1,
               offset: const Offset(0, 1),
