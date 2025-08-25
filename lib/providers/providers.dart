@@ -1,8 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:timezone/timezone.dart' as tz;
-import 'dart:html' as html;
-import 'dart:js' as js;
-import 'package:shared_preferences/shared_preferences.dart';
 import '../models/settings_model.dart';
 import '../models/timezone_model.dart';
 import '../models/async_value_state.dart';
@@ -87,7 +84,7 @@ class TimezoneNotifier extends StateNotifier<AsyncValueState<List<TimezoneModel>
     
     // Try to detect user's actual timezone first
     final userTimezone = _getTimezoneFromBrowser();
-    print('Detected user timezone: $userTimezone');
+    // Detected user timezone: $userTimezone
     
     // ONLY show user's timezone initially (not demo timezones)
     final timezoneNames = [userTimezone];
@@ -113,37 +110,7 @@ class TimezoneNotifier extends StateNotifier<AsyncValueState<List<TimezoneModel>
   }
   
   String _getTimezoneFromBrowser() {
-    try {
-      // Try multiple JavaScript approaches to get timezone
-      String? detectedTimezone;
-      
-      // Method 1: Direct Intl API
-      try {
-        detectedTimezone = js.context['Intl']['DateTimeFormat'].callMethod('', []).callMethod('resolvedOptions', [])['timeZone'];
-      } catch (e) {
-        print('Method 1 failed: $e');
-      }
-      
-      // Method 2: Create new DateTimeFormat
-      if (detectedTimezone == null || detectedTimezone.isEmpty) {
-        try {
-          final dtf = js.context['Intl']['DateTimeFormat'].callMethod('', []);
-          final options = dtf.callMethod('resolvedOptions', []);
-          detectedTimezone = options['timeZone'];
-        } catch (e) {
-          print('Method 2 failed: $e');
-        }
-      }
-      
-      if (detectedTimezone != null && detectedTimezone.isNotEmpty) {
-        print('JavaScript detected timezone: $detectedTimezone');
-        return detectedTimezone;
-      }
-    } catch (e) {
-      print('All JavaScript timezone detection methods failed: $e');
-    }
-    
-    // Fallback: Use timezone offset with better Mexico/Central America mapping
+    // Use timezone offset with better Mexico/Central America mapping
     try {
       final now = DateTime.now();
       final offset = now.timeZoneOffset.inHours;

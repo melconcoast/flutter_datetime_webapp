@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../widgets/clock_widget.dart';
 import '../widgets/timezone_grid_view.dart';
 import '../widgets/timezone_list_view.dart';
 import '../widgets/timezone_selection_dialog.dart';

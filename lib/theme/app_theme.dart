@@ -6,8 +6,6 @@ class AppTheme {
   static const Color primaryBlue = Color(0xFF2196F3);
   static const Color primaryIndigo = Color(0xFF3F51B5);
   static const Color accentPurple = Color(0xFF9C27B0);
-  static const Color surfaceLight = Color(0xFFFAFBFF);
-  static const Color surfaceDark = Color(0xFF0A0E1A);
   
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
@@ -15,12 +13,10 @@ class AppTheme {
       primary: primaryBlue,
       secondary: primaryIndigo,
       tertiary: accentPurple,
-      surface: surfaceLight,
-      background: Color(0xFFF5F7FA),
+      surface: Color(0xFFF5F7FA),
       onPrimary: Colors.white,
       onSecondary: Colors.white,
       onSurface: Color(0xFF1A1C1E),
-      onBackground: Color(0xFF1A1C1E),
     ),
     fontFamily: GoogleFonts.inter().fontFamily,
     textTheme: GoogleFonts.interTextTheme().copyWith(
@@ -74,12 +70,10 @@ class AppTheme {
       primary: Color(0xFF7C4DFF),
       secondary: Color(0xFF536DFE),
       tertiary: Color(0xFFE91E63),
-      surface: surfaceDark,
-      background: Color(0xFF050810),
+      surface: Color(0xFF050810),
       onPrimary: Colors.white,
       onSecondary: Colors.white,
       onSurface: Color(0xFFE3E5E8),
-      onBackground: Color(0xFFE3E5E8),
     ),
     fontFamily: GoogleFonts.inter().fontFamily,
     textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme).copyWith(
