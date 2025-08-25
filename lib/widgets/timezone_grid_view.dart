@@ -71,7 +71,7 @@ class TimezoneGridView extends ConsumerWidget {
               right: 8,
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.red.withOpacity(0.8),
+                  color: Colors.red.withValues(alpha: 0.8),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: IconButton(
