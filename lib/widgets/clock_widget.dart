@@ -103,26 +103,26 @@ class _ClockWidgetState extends ConsumerState<ClockWidget> {
             end: Alignment.bottomRight,
             colors: widget.isDaytime 
                 ? [
-                    const Color(0xFFE3F2FD).withValues(alpha: 0.8),
-                    const Color(0xFFBBDEFB).withValues(alpha: 0.9),
+                    const Color(0xFFE3F2FD).withOpacity(0.8),
+                    const Color(0xFFBBDEFB).withOpacity(0.9),
                   ]
                 : [
-                    const Color(0xFF1A237E).withValues(alpha: 0.9),
-                    const Color(0xFF3949AB).withValues(alpha: 0.8),
+                    const Color(0xFF1A237E).withOpacity(0.9),
+                    const Color(0xFF3949AB).withOpacity(0.8),
                   ],
           ),
           borderRadius: BorderRadius.circular(24),
           border: Border.all(
             color: widget.isDaytime 
-                ? Colors.white.withValues(alpha: 0.3)
-                : Colors.white.withValues(alpha: 0.1),
+                ? Colors.white.withOpacity(0.3)
+                : Colors.white.withOpacity(0.1),
             width: 1.5,
           ),
           boxShadow: [
             BoxShadow(
               color: widget.isDaytime 
-                  ? const Color(0xFF2196F3).withValues(alpha: _isHovered ? 0.25 : 0.15)
-                  : const Color(0xFF7C4DFF).withValues(alpha: _isHovered ? 0.35 : 0.25),
+                  ? const Color(0xFF2196F3).withOpacity(_isHovered ? 0.25 : 0.15)
+                  : const Color(0xFF7C4DFF).withOpacity(_isHovered ? 0.35 : 0.25),
               blurRadius: _isHovered ? 20 : 16,
               offset: Offset(0, _isHovered ? 8 : 6),
               spreadRadius: _isHovered ? 2 : 0,
@@ -145,13 +145,13 @@ class _ClockWidgetState extends ConsumerState<ClockWidget> {
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 decoration: BoxDecoration(
                   color: widget.isDaytime 
-                      ? Colors.white.withValues(alpha: 0.2)
-                      : Colors.white.withValues(alpha: 0.1),
+                      ? Colors.white.withOpacity(0.2)
+                      : Colors.white.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
                     color: widget.isDaytime 
-                        ? Colors.white.withValues(alpha: 0.3)
-                        : Colors.white.withValues(alpha: 0.2),
+                        ? Colors.white.withOpacity(0.3)
+                        : Colors.white.withOpacity(0.2),
                   ),
                 ),
                 child: Row(
@@ -170,7 +170,7 @@ class _ClockWidgetState extends ConsumerState<ClockWidget> {
                       style: theme.textTheme.labelLarge?.copyWith(
                         color: widget.isDaytime 
                             ? const Color(0xFF1565C0)
-                            : Colors.white.withValues(alpha: 0.9),
+                            : Colors.white.withOpacity(0.9),
                         fontWeight: FontWeight.w600,
                         letterSpacing: 0.5,
                       ),
@@ -199,19 +199,19 @@ class _ClockWidgetState extends ConsumerState<ClockWidget> {
                   gradient: LinearGradient(
                     colors: widget.isDaytime 
                         ? [
-                            Colors.white.withValues(alpha: 0.3),
-                            Colors.white.withValues(alpha: 0.1),
+                            Colors.white.withOpacity(0.3),
+                            Colors.white.withOpacity(0.1),
                           ]
                         : [
-                            Colors.white.withValues(alpha: 0.15),
-                            Colors.white.withValues(alpha: 0.05),
+                            Colors.white.withOpacity(0.15),
+                            Colors.white.withOpacity(0.05),
                           ],
                   ),
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
                     color: widget.isDaytime 
-                        ? Colors.white.withValues(alpha: 0.4)
-                        : Colors.white.withValues(alpha: 0.2),
+                        ? Colors.white.withOpacity(0.4)
+                        : Colors.white.withOpacity(0.2),
                   ),
                 ),
                 child: Column(
@@ -230,7 +230,7 @@ class _ClockWidgetState extends ConsumerState<ClockWidget> {
                             ? []
                             : [
                                 Shadow(
-                                  color: Colors.white.withValues(alpha: 0.5),
+                                  color: Colors.white.withOpacity(0.5),
                                   blurRadius: 8,
                                 ),
                               ],
@@ -241,8 +241,8 @@ class _ClockWidgetState extends ConsumerState<ClockWidget> {
                       _formatDate(_currentTime, settings.data?.dateFormat ?? DateFormat.ddmmyyyy),
                       style: theme.textTheme.titleMedium?.copyWith(
                         color: widget.isDaytime 
-                            ? const Color(0xFF1976D2).withValues(alpha: 0.7)
-                            : Colors.white.withValues(alpha: 0.8),
+                            ? const Color(0xFF1976D2).withOpacity(0.7)
+                            : Colors.white.withOpacity(0.8),
                         fontWeight: FontWeight.w500,
                         letterSpacing: 1.2,
                       ),
@@ -258,13 +258,13 @@ class _ClockWidgetState extends ConsumerState<ClockWidget> {
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   decoration: BoxDecoration(
                     color: widget.isDaytime 
-                        ? Colors.white.withValues(alpha: 0.2)
-                        : Colors.white.withValues(alpha: 0.1),
+                        ? Colors.white.withOpacity(0.2)
+                        : Colors.white.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
                       color: widget.isDaytime 
-                          ? Colors.white.withValues(alpha: 0.3)
-                          : Colors.white.withValues(alpha: 0.2),
+                          ? Colors.white.withOpacity(0.3)
+                          : Colors.white.withOpacity(0.2),
                     ),
                   ),
                   child: Row(
@@ -287,8 +287,8 @@ class _ClockWidgetState extends ConsumerState<ClockWidget> {
                         height: 20,
                         width: 1,
                         color: widget.isDaytime 
-                            ? Colors.grey.withValues(alpha: 0.3)
-                            : Colors.white.withValues(alpha: 0.2),
+                            ? Colors.grey.withOpacity(0.3)
+                            : Colors.white.withOpacity(0.2),
                       ),
                       
                       // Humidity
@@ -340,7 +340,7 @@ class _ClockWidgetState extends ConsumerState<ClockWidget> {
           style: TextStyle(
             color: widget.isDaytime 
                 ? const Color(0xFF1565C0)
-                : Colors.white.withValues(alpha: 0.9),
+                : Colors.white.withOpacity(0.9),
             fontWeight: FontWeight.w600,
             fontSize: 14,
           ),
